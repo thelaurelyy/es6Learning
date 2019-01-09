@@ -18,15 +18,15 @@
     <session id="1944886961">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
-          <entry key="project.open.time.0" value="2" />
+          <entry key="project.closed" value="9" />
+          <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -43,24 +43,27 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="387" />
-          <entry key="txt" value="7" />
+          <entry key="md" value="2169" />
+          <entry key="txt" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="394" />
+          <entry key="PLAIN_TEXT" value="2182" />
         </counts>
       </usages-collector>
     </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="（9）es6" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="725">
-              <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+            <state relative-caret-position="456">
+              <caret line="256" lean-forward="true" selection-start-line="256" selection-end-line="256" />
             </state>
           </provider>
         </entry>
@@ -92,47 +95,16 @@
       <path value="$PROJECT_DIR$/es6Learning/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="974" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1028" />
+    <option name="width" value="899" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="（9）es6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="（9）es6" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="（9）es6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="（9）es6" type="462c0819:PsiDirectoryNode" />
-              <item name="es6Learning" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="（9）es6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="（9）es6" type="462c0819:PsiDirectoryNode" />
-              <item name="es6Learning" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="（9）es6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="（9）es6" type="462c0819:PsiDirectoryNode" />
-              <item name="es6Learning" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="router" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -176,7 +148,9 @@
       <workItem from="1542613299836" duration="618000" />
       <workItem from="1542707614791" duration="1423000" />
       <workItem from="1543049906579" duration="1212000" />
-      <workItem from="1544407082248" duration="3073000" />
+      <workItem from="1544407082248" duration="10220000" />
+      <workItem from="1546583781786" duration="7323000" />
+      <workItem from="1546593643354" duration="22687000" />
     </task>
     <task id="LOCAL-00001" summary="修改说明文件">
       <created>1542188765460</created>
@@ -185,20 +159,27 @@
       <option name="project" value="LOCAL" />
       <updated>1542188765460</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ECMAScript 6 入门笔记">
+      <created>1544414039129</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1544414039129</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18791000" />
+    <option name="totallyTimeSpent" value="55948000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1028" y="0" width="899" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09488273" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989035" weight="0.1950431" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info id="DB Browser" order="3" />
+      <window_info id="Favorites" order="2" sideWeight="0.5010965" side_tool="true" weight="0.3297414" />
+      <window_info id="DB Browser" order="3" sideWeight="0.4989035" weight="0.3297414" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -229,7 +210,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="修改说明文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改说明文件" />
+    <MESSAGE value="ECMAScript 6 入门笔记" />
+    <option name="LAST_COMMIT_MESSAGE" value="ECMAScript 6 入门笔记" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/es6Learning/src/router/index.js">
@@ -248,8 +230,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+        <state relative-caret-position="456">
+          <caret line="256" lean-forward="true" selection-start-line="256" selection-end-line="256" />
         </state>
       </provider>
     </entry>
