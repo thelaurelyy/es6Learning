@@ -98,8 +98,8 @@ ES6中，var命令和function命令声明的全局变量依旧是顶层对象的
 
 # 第二讲 变量的解构赋值
 ## 1、数组的解构赋值
->ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。
->本质上，这种写法属于“模式匹配”，只要等号两边的模式相同，左边的变量就会被赋予对应的值。
+>ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。  <br />
+>本质上，这种写法属于“模式匹配”，只要等号两边的模式相同，左边的变量就会被赋予对应的值。    <br />
 >如果解构不成功，变量的值就等于undefined。
 
 ### （1）基本用法：事实上只要某种数据结构具有 Iterator 接口，都可以采用数组形式的解构赋值。
@@ -252,7 +252,7 @@ foo是匹配的模式，baz才是变量。真正被赋值的是变量baz，而�
         let { prop: x } = undefined; // TypeError
         let { prop: y } = null; // TypeError
 
-## 5、函数参数的解构赋值 <font color="Hotpink">【重点】</font>
+## 5、函数参数的解构赋值 【重点】
 函数参数的解构也可以使用默认值，undefined就会触发函数参数的默认值。
 
         [[1, 2], [3, 4]].map(([a, b]) => a + b);
@@ -303,7 +303,237 @@ foo是匹配的模式，baz才是变量。真正被赋值的是变量baz，而�
         move(); // [0, 0]
 
 
+## 6、圆括号问题
+只要有可能导致结构的歧义就不得使用圆括号。
 
+不得使用圆括号的三种情况：
+- （1）变量声明语句
+- （2）函数参数
+- （3）赋值语句的模式
+
+可以使用圆括号的情况：
+赋值语句的非模式部分可以使用圆括号。
+
+        [(b)] = [3]; // 正确
+        ({ p: (d) } = {}); // 正确
+        [(parseInt.prop)] = [3]; // 正确
+
+
+## 7、解构赋值的用途
+
+- （1）交换变量的值
+
+        let x = 1;
+        let y = 2;
+        [x, y] = [y, x];
+
+- （2）从函数返回多个值时的解构赋值
+
+        // 返回一个数组
+        function example() {
+          return [1, 2, 3];
+        }
+        let [a, b, c] = example();
+
+        // 返回一个对象
+        function example() {
+          return {
+            foo: 1,
+            bar: 2
+          };
+        }
+        let { foo, bar } = example();
+
+- （3）函数参数的定义
+
+        // 参数是一组有次序的值
+        function f([x, y, z]) { ... }
+        f([1, 2, 3]);
+
+        // 参数是一组无次序的值
+        function f({x, y, z}) { ... }
+        f({z: 3, y: 2, x: 1});
+
+- （4）提取JSON数据（跟第二点类似）
+
+- （5）函数参数的默认值
+    注意：这里区别于第三点（给函数有序或无序传值），这是给函数参数设置默认值。
+    只有当该变量为undefined时，默认值才会生效。
+
+        jQuery.ajax = function (url, {
+          async = true,
+          beforeSend = function () {},
+          cache = true,
+          complete = function () {},
+          crossDomain = false,
+          global = true,
+          // ... more config
+        } = {}) {
+          // ... do stuff
+        };
+
+- （6）遍历 Map 结构
+    任何部署了Iterator接口的对象，都可以用 for...of...循环遍历。
+
+        const map = new Map();
+        map.set('first', 'hello');
+        map.set('second', 'world');
+
+        for (let [key, value] of map) {
+          console.log(key + " is " + value);
+        }
+        // first is hello
+        // second is world
+
+- （7）输入模块的指定方法
+    我们在使用import 或者 require 加载模块的时候，可以指定特定的方法，使得输入语句更清晰。
+
+        const { SourceMapConsumer, SourceNode } = require("source-map");
+        import { getToken } from '@/utils/auth';
+
+
+
+# 第三讲 字符串的扩展
+
+涉及到Unicode编码，文档没看懂，需要实例回顾
+---
+
+# 第四讲 正则的扩展
+
+
+
+# 第五讲 数值的扩展
+
+
+
+# 第六讲 函数的扩展
+
+## 1、函数参数的默认值
+（1）传统的函数参数 指定默认值缺点在于：如果参数赋值了，但是对应的布尔值为false，则该赋值不起作用。
+    为了避免这个问题，通常需要先判断一下参数y是否被赋值，如果没有，再等于默认值。
+
+        function log(x, y) {
+          y = y || 'World';
+          //var y = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'World';
+          console.log(x, y);
+        }
+        log('Hello') // Hello World
+        log('Hello', 'China') // Hello China
+        log('Hello', '') // Hello World
+
+## （2）ES6的写法比ES5简洁许多，而且非常自然  <br />
+    a.默认声明的参数变量，在函数体中不能用 let 或 const 再次声明，否则会报错；
+    b.使用参数默认值时，函数不能有同名参数；
+    c.参数默认值不是传值的，而是每次都重新计算默认值表达式的值。也就是说，参数默认值是惰性求值的。
+
+        let x = 99;
+        function foo(p = x + 1) {
+            console.log(p);
+        }
+        foo();      //100
+
+        x = 100;
+        foo();      //101
+
+## （3）与解构赋值默认值结合使用
+
+        function foo({x, y = 5} = {}) {
+          console.log(x, y);
+        }
+        foo() // undefined 5
+
+
+    //可解释为：
+        "use strict";
+        function foo() {
+          var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+              x = _ref.x,
+              _ref$y = _ref.y,
+              y = _ref$y === void 0 ? 5 : _ref$y;
+
+          console.log(x, y);
+        }
+        foo(); // undefined 5
+
+
+## （4）双重默认值
+        function fetch(url, { body = '', method = 'GET', headers = {} } = {}) {
+          console.log(method);
+        }
+        fetch('http://example.com')
+        // "GET"
+
+函数fetch没有第二个参数时，函数参数的默认值就会生效，然后才是解构赋值的默认值生效，变量method才会取到默认值Get。
+
+Q：解构赋值的默认值 ？？？
+
+
+## （5）对于这个demo存有疑虑！    <br />
+        尤其涉及到解构赋值的部分，请重新学习 ## 第三讲 ## 变量的解构赋值
+
+        // 写法一
+        function m1({x = 0, y = 0} = {}) {
+          return [x, y];
+        }
+
+        // 写法二
+        function m2({x, y} = { x: 0, y: 0 }) {
+          return [x, y];
+        }
+
+        // 函数没有参数的情况
+        m1() // [0, 0]
+        m2() // [0, 0]
+
+        // x 和 y 都有值的情况
+        m1({x: 3, y: 8}) // [3, 8]
+        m2({x: 3, y: 8}) // [3, 8]
+
+        // x 有值，y 无值的情况
+        m1({x: 3}) // [3, 0]
+        m2({x: 3}) // [3, undefined]
+
+        // x 和 y 都无值的情况
+        m1({}) // [0, 0];
+        m2({}) // [undefined, undefined]
+
+        m1({z: 3}) // [0, 0]
+        m2({z: 3}) // [undefined, undefined]
+
+
+## （6）参数默认值的位置
+通常情况下，定义了默认值的参数，应该是函数的尾参数。因为这样比较容易看出来，哪些参数在调用时是可省略的。
+否则无法只省略该参数，而不省略它后面的参数，除非显式输入undefined。
+
+
+## （7）函数的length属性
+指定了默认值以后，函数的length属性将返回没有指定默认值的参数个数，也就是说，指定默认值以后，length属性将失真。
+如果设置了默认值的参数不是尾参数，那么length属性也不再计入后面的参数了。
+
+        (function (a = 0, b, c) {}).length // 0
+        (function (a, b = 1, c) {}).length // 1
+
+
+## （8）作用域
+
+        var x = 1;
+        function foo(x, y = function() { x = 2; }) {
+          var x = 3;
+          y();
+          console.log(x);
+        }
+        foo() // 3
+        x // 1
+
+
+        var x = 1;
+        function foo(x, y = function() { x = 2; }) {
+          x = 3;
+          y();
+          console.log(x);
+        }
+        foo() // 2
+        x // 1
 
 
 
