@@ -547,7 +547,7 @@ ES6引入rest参数（形式为...变量名），用于获取函数多余的参�
 
 arguments对象不是数组，而是一个类似数组的对象，所以为了使用数组的方法，必须使用Array.prototype.slice.call先将其转为数组。
 
-### 注意 ###，rest参数之后不能再有其它参数（即只能是最后一个参数），否则会报错。
+### 注意，rest参数之后不能再有其它参数（即只能是最后一个参数），否则会报错。 ###
 
 ### 函数的length属性，不包括rest参数。 ###
 
@@ -590,6 +590,81 @@ arguments对象不是数组，而是一个类似数组的对象，所以为了�
         foo.bind({}).name // "bound foo"
 
         (function(){}).bind({}).name // "bound "
+
+
+## 5、箭头函数
+1. 圆括号代表参数部分；
+2. 代码多于一条语句就需要用大括号括起来，并且使用return语句返回；
+3. 返回值是对象时，必须用大括号括起来；
+4. 注意：
+
+    - 函数体内的 *this*对象，就是定义是所在的对象，而不是使用时所在的对象；
+    - 不可以当做构造函数，也就是说，不可以使用*new*命令，否则会抛出一个错误；
+    - 不可以使用*arguments*对象，该对象在函数体内不存在，如果要用，可以使用rest参数代替；
+    - 不可以使用*yield*命令，因此箭头函数不能用作 Generator 函数。
+
+5. 箭头函数可以让*this*指向固化，这种特性很利于封装回调函数。 <br />
+    实际原因是箭头函数根本没有自己的this，导致内部的this就是外层代码块的this。正是因为它没有this，所以也就不能用作构造函数。
+6. 除了this，以下三个变量在箭头函数中也是不存在的，指向外层函数的对应变量：arguments、super、new.target
+7. 由于箭头函数没有自己的this，也就不能用call()、apply()、bind()这些方法去改变this的指向
+8. 箭头函数不适用的场合：
+
+    - 定义函数的方法，且该方法内部包括this。箭头函数使得this指向全局对象，因此不会得到预期结果。
+
+        const cat = {
+          lives: 9,
+          jumps: () => {
+            this.lives--;
+          }
+        }
+
+    - 需要动态this的时候，也不应使用箭头函数。 <br />
+    下面代码运行时，点击按钮会报错，因为button的监听函数是一个箭头函数，导致里面的this就是全局对象。如果改成普通函数，this就会动态指向被点击的按钮对象。
+
+       var button = document.getElementById('press');
+       button.addEventListener('click', () => {
+         this.classList.toggle('on');
+       });
+
+9. 嵌套的箭头函数
+
+        function insert(value) {
+          return {into: function (array) {
+            return {after: function (afterValue) {
+              array.splice(array.indexOf(afterValue) + 1, 0, value);
+              return array;
+            }};
+          }};
+        }
+        insert(2).into([1, 3]).after(1); //[1, 2, 3]
+
+使用箭头函数改写
+
+        let insert = (value) => ({into: (array) => ({after: (afterValue) => {
+          array.splice(array.indexOf(afterValue) + 1, 0, value);
+          return array;
+        }})});
+        insert(2).into([1, 3]).after(1); //[1, 2, 3]
+
+
+部署管道机制的例子
+
+        const pipeline = (...funcs) =>
+          val => funcs.reduce((a, b) => b(a), val);
+
+        const plus1 = a => a + 1;
+        const mult2 = a => a * 2;
+        const addThenMult = pipeline(plus1, mult2);
+
+        addThenMult(5)    // 12
+
+如果觉得上面的写法可读性比较差，也可以采用下面的写法。
+
+        const plus1 = a => a + 1;
+        const mult2 = a => a * 2;
+
+        mult2(plus1(5))     // 12
+
 
 
 

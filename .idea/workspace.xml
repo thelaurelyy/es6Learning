@@ -26,36 +26,39 @@
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.38" value="1" />
+          <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.54" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="17" />
+          <entry key="project.opened" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="1" />
+          <entry key="html" value="1" />
+          <entry key="js" value="3" />
           <entry key="json" value="4" />
           <entry key="md" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="HTML" value="1" />
           <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="1" />
+          <entry key="JavaScript" value="3" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="4732" />
-          <entry key="txt" value="45" />
+          <entry key="md" value="5535" />
+          <entry key="txt" value="86" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="4777" />
+          <entry key="PLAIN_TEXT" value="5621" />
         </counts>
       </usages-collector>
     </session>
@@ -68,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="590" lean-forward="true" selection-start-line="590" selection-end-line="590" />
+            <state relative-caret-position="586">
+              <caret line="665" column="33" lean-forward="true" selection-start-line="665" selection-start-column="33" selection-end-line="665" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -81,6 +84,7 @@
       <find>###</find>
       <find>拓展</find>
       <find>webpack-dev-server</find>
+      <find>eslint</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -132,6 +136,18 @@
               <item name="（9）es6" type="462c0819:PsiDirectoryNode" />
               <item name="es6Learning" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="（9）es6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="（9）es6" type="462c0819:PsiDirectoryNode" />
+              <item name="es6Learning" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="（9）es6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="（9）es6" type="462c0819:PsiDirectoryNode" />
+              <item name="es6Learning" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -140,7 +156,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/git_repository/MSR" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../（8）Demo_vue-element-admin" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -190,7 +206,8 @@
       <workItem from="1550453977170" duration="1170000" />
       <workItem from="1551060748819" duration="2456000" />
       <workItem from="1551412253285" duration="16000" />
-      <workItem from="1551942696239" duration="20678000" />
+      <workItem from="1551942696239" duration="21392000" />
+      <workItem from="1552876142184" duration="10201000" />
     </task>
     <task id="LOCAL-00001" summary="修改说明文件">
       <created>1542188765460</created>
@@ -234,17 +251,24 @@
       <option name="project" value="LOCAL" />
       <updated>1552449045928</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="第七讲 函数的扩展（### 函数的默认值 ###、rest参数、严格模式、name属性）">
+      <created>1552638523101</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1552638523101</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99100000" />
+    <option name="totallyTimeSpent" value="110015000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989035" visible="true" weight="0.21444201" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989035" visible="true" weight="0.24726477" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5010965" side_tool="true" weight="0.3297414" />
       <window_info id="DB Browser" order="3" sideWeight="0.4989035" weight="0.3297414" />
@@ -256,7 +280,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.329718" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32894737" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49947312" weight="0.32899022" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50052685" side_tool="true" weight="0.32899022" />
       <window_info anchor="bottom" id="DB Execution Console" order="11" />
@@ -273,6 +297,32 @@
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.md" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -282,7 +332,8 @@
     <MESSAGE value="第二讲 变量的解构赋值" />
     <MESSAGE value="第七讲 函数的扩展" />
     <MESSAGE value="网络请求" />
-    <option name="LAST_COMMIT_MESSAGE" value="网络请求" />
+    <MESSAGE value="第七讲 函数的扩展（### 函数的默认值 ###、rest参数、严格模式、name属性）" />
+    <option name="LAST_COMMIT_MESSAGE" value="第七讲 函数的扩展（### 函数的默认值 ###、rest参数、严格模式、name属性）" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/es6Learning/src/router/index.js">
@@ -313,10 +364,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/es6Learning/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/es6Learning/build/webpack.base.conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="20" column="53" lean-forward="true" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/es6Learning/config/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="590" lean-forward="true" selection-start-line="590" selection-end-line="590" />
+        <state relative-caret-position="586">
+          <caret line="665" column="33" lean-forward="true" selection-start-line="665" selection-start-column="33" selection-end-line="665" selection-end-column="33" />
         </state>
       </provider>
     </entry>
