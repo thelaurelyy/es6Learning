@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f37c8e9a-0fb9-42dc-aa80-aa2a818d5fae" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -52,13 +51,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="5535" />
-          <entry key="txt" value="86" />
+          <entry key="md" value="5554" />
+          <entry key="txt" value="90" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="5621" />
+          <entry key="PLAIN_TEXT" value="5644" />
         </counts>
       </usages-collector>
     </session>
@@ -71,8 +70,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="586">
-              <caret line="665" column="33" lean-forward="true" selection-start-line="665" selection-start-column="33" selection-end-line="665" selection-end-column="33" />
+            <state relative-caret-position="92">
+              <caret line="613" column="8" selection-start-line="613" selection-start-column="8" selection-end-line="618" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -207,7 +206,7 @@
       <workItem from="1551060748819" duration="2456000" />
       <workItem from="1551412253285" duration="16000" />
       <workItem from="1551942696239" duration="21392000" />
-      <workItem from="1552876142184" duration="10201000" />
+      <workItem from="1552876142184" duration="11386000" />
     </task>
     <task id="LOCAL-00001" summary="修改说明文件">
       <created>1542188765460</created>
@@ -258,11 +257,18 @@
       <option name="project" value="LOCAL" />
       <updated>1552638523101</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="第七讲 函数的扩展（箭头函数）">
+      <created>1553147600946</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1553147600946</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110015000" />
+    <option name="totallyTimeSpent" value="111200000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
@@ -333,7 +339,8 @@
     <MESSAGE value="第七讲 函数的扩展" />
     <MESSAGE value="网络请求" />
     <MESSAGE value="第七讲 函数的扩展（### 函数的默认值 ###、rest参数、严格模式、name属性）" />
-    <option name="LAST_COMMIT_MESSAGE" value="第七讲 函数的扩展（### 函数的默认值 ###、rest参数、严格模式、name属性）" />
+    <MESSAGE value="第七讲 函数的扩展（箭头函数）" />
+    <option name="LAST_COMMIT_MESSAGE" value="第七讲 函数的扩展（箭头函数）" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/es6Learning/src/router/index.js">
@@ -387,8 +394,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="665" column="33" lean-forward="true" selection-start-line="665" selection-start-column="33" selection-end-line="665" selection-end-column="33" />
+        <state relative-caret-position="92">
+          <caret line="613" column="8" selection-start-line="613" selection-start-column="8" selection-end-line="618" selection-end-column="9" />
         </state>
       </provider>
     </entry>
