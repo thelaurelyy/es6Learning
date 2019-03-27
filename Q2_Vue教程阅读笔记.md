@@ -12,7 +12,7 @@
     - 不要在选项属性或回调上使用箭头函数，因为箭头函数的this指向父级上下文，而不是当前vue实例。
 
 3.生命周期图示
-![avatar](src/assets/lifecycle.png)
+![avatar](es6Learning/src/assets/lifecycle.png)
 
 
 
