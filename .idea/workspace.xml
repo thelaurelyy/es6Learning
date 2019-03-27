@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f37c8e9a-0fb9-42dc-aa80-aa2a818d5fae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Q2_Vue教程阅读笔记.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/es6Learning/src/assets/lifecycle.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q2_Vue教程阅读笔记.md" beforeDir="false" afterPath="$PROJECT_DIR$/Q2_Vue教程阅读笔记.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -56,13 +55,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="7663" />
-          <entry key="txt" value="132" />
+          <entry key="md" value="7671" />
+          <entry key="txt" value="143" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="7795" />
+          <entry key="PLAIN_TEXT" value="7814" />
         </counts>
       </usages-collector>
     </session>
@@ -84,8 +83,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Q2_Vue教程阅读笔记.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="846">
-              <caret line="183" lean-forward="true" selection-start-line="183" selection-end-line="183" />
+            <state relative-caret-position="-343">
+              <caret line="141" lean-forward="true" selection-start-line="141" selection-end-line="141" />
             </state>
           </provider>
         </entry>
@@ -133,8 +132,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1087" />
-    <option name="width" value="840" />
+    <option name="x" value="918" />
+    <option name="width" value="1009" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
@@ -229,7 +228,7 @@
       <workItem from="1551412253285" duration="16000" />
       <workItem from="1551942696239" duration="21392000" />
       <workItem from="1552876142184" duration="19862000" />
-      <workItem from="1553478814969" duration="26570000" />
+      <workItem from="1553478814969" duration="27520000" />
     </task>
     <task id="LOCAL-00001" summary="修改说明文件">
       <created>1542188765460</created>
@@ -301,11 +300,25 @@
       <option name="project" value="LOCAL" />
       <updated>1553148857008</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="vue官方教程阅读笔记">
+      <created>1553666834603</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1553666834603</updated>
+    </task>
+    <task id="LOCAL-00012" summary="vue官方教程阅读笔记">
+      <created>1553667923096</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1553667923096</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146246000" />
+    <option name="totallyTimeSpent" value="147196000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -317,10 +330,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1087" y="0" width="840" height="1047" extended-state="0" />
+    <frame x="918" y="0" width="1009" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989035" weight="0.2113127" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989035" visible="true" weight="0.17281349" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5010965" side_tool="true" weight="0.3297414" />
       <window_info id="DB Browser" order="3" sideWeight="0.4989035" weight="0.3297414" />
@@ -387,7 +400,8 @@
     <MESSAGE value="第七讲 函数的扩展（### 函数的默认值 ###、rest参数、严格模式、name属性）" />
     <MESSAGE value="第七讲 函数的扩展（箭头函数）" />
     <MESSAGE value="Markdown语法中*XXX*与**XXX**的区别" />
-    <option name="LAST_COMMIT_MESSAGE" value="Markdown语法中*XXX*与**XXX**的区别" />
+    <MESSAGE value="vue官方教程阅读笔记" />
+    <option name="LAST_COMMIT_MESSAGE" value="vue官方教程阅读笔记" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/es6Learning/src/router/index.js">
@@ -451,8 +465,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Q2_Vue教程阅读笔记.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="846">
-          <caret line="183" lean-forward="true" selection-start-line="183" selection-end-line="183" />
+        <state relative-caret-position="-343">
+          <caret line="141" lean-forward="true" selection-start-line="141" selection-end-line="141" />
         </state>
       </provider>
     </entry>
