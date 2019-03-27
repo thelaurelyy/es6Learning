@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f37c8e9a-0fb9-42dc-aa80-aa2a818d5fae" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Q2_Vue教程阅读笔记.md" beforeDir="false" afterPath="$PROJECT_DIR$/Q2_Vue教程阅读笔记.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -54,13 +55,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="7679" />
-          <entry key="txt" value="143" />
+          <entry key="md" value="7692" />
+          <entry key="txt" value="155" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="7822" />
+          <entry key="PLAIN_TEXT" value="7847" />
         </counts>
       </usages-collector>
     </session>
@@ -82,8 +83,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Q2_Vue教程阅读笔记.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="134" column="5" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
+            <state relative-caret-position="361">
+              <caret line="192" column="1" selection-start-line="192" selection-start-column="1" selection-end-line="192" selection-end-column="1" />
+              <caret line="191" column="1" selection-start-line="191" selection-start-column="1" selection-end-line="191" selection-end-column="1" />
+              <caret line="190" column="1" selection-start-line="190" selection-start-column="1" selection-end-line="190" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -227,7 +230,7 @@
       <workItem from="1551412253285" duration="16000" />
       <workItem from="1551942696239" duration="21392000" />
       <workItem from="1552876142184" duration="19862000" />
-      <workItem from="1553478814969" duration="27756000" />
+      <workItem from="1553478814969" duration="28054000" />
     </task>
     <task id="LOCAL-00001" summary="修改说明文件">
       <created>1542188765460</created>
@@ -327,11 +330,25 @@
       <option name="project" value="LOCAL" />
       <updated>1553668241217</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="vue官方教程阅读笔记">
+      <created>1553668325863</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1553668325863</updated>
+    </task>
+    <task id="LOCAL-00016" summary="markdown列表语法">
+      <created>1553668402878</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1553668402878</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147432000" />
+    <option name="totallyTimeSpent" value="147730000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -414,7 +431,8 @@
     <MESSAGE value="第七讲 函数的扩展（箭头函数）" />
     <MESSAGE value="Markdown语法中*XXX*与**XXX**的区别" />
     <MESSAGE value="vue官方教程阅读笔记" />
-    <option name="LAST_COMMIT_MESSAGE" value="vue官方教程阅读笔记" />
+    <MESSAGE value="markdown列表语法" />
+    <option name="LAST_COMMIT_MESSAGE" value="markdown列表语法" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/es6Learning/src/router/index.js">
@@ -478,8 +496,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Q2_Vue教程阅读笔记.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="134" column="5" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
+        <state relative-caret-position="361">
+          <caret line="192" column="1" selection-start-line="192" selection-start-column="1" selection-end-line="192" selection-end-column="1" />
+          <caret line="191" column="1" selection-start-line="191" selection-start-column="1" selection-end-line="191" selection-end-column="1" />
+          <caret line="190" column="1" selection-start-line="190" selection-start-column="1" selection-end-line="190" selection-end-column="1" />
         </state>
       </provider>
     </entry>
