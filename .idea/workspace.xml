@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f37c8e9a-0fb9-42dc-aa80-aa2a818d5fae" name="Default Changelist" comment="">
+    <list default="true" id="f37c8e9a-0fb9-42dc-aa80-aa2a818d5fae" name="Default Changelist" comment="markdown语法strong">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q1_浏览器是否会绕过web服务器向后台发送请求.md" beforeDir="false" afterPath="$PROJECT_DIR$/Q1_浏览器是否会绕过web服务器向后台发送请求.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Q2_Vue教程阅读笔记.md" beforeDir="false" afterPath="$PROJECT_DIR$/Q2_Vue教程阅读笔记.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -40,7 +41,7 @@
           <entry key="html" value="1" />
           <entry key="js" value="3" />
           <entry key="json" value="4" />
-          <entry key="md" value="2" />
+          <entry key="md" value="3" />
           <entry key="png" value="1" />
         </counts>
       </usages-collector>
@@ -50,18 +51,18 @@
           <entry key="Image" value="1" />
           <entry key="JSON" value="4" />
           <entry key="JavaScript" value="3" />
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="7692" />
-          <entry key="txt" value="155" />
+          <entry key="md" value="8693" />
+          <entry key="txt" value="162" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="7847" />
+          <entry key="PLAIN_TEXT" value="8855" />
         </counts>
       </usages-collector>
     </session>
@@ -83,10 +84,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Q2_Vue教程阅读笔记.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="192" column="1" selection-start-line="192" selection-start-column="1" selection-end-line="192" selection-end-column="1" />
-              <caret line="191" column="1" selection-start-line="191" selection-start-column="1" selection-end-line="191" selection-end-column="1" />
-              <caret line="190" column="1" selection-start-line="190" selection-start-column="1" selection-end-line="190" selection-end-column="1" />
+            <state relative-caret-position="586">
+              <caret line="430" lean-forward="true" selection-start-line="430" selection-end-line="430" />
             </state>
           </provider>
         </entry>
@@ -101,6 +100,7 @@
       <find>eslint</find>
       <find>**</find>
       <find>###</find>
+      <find>插槽</find>
     </findStrings>
     <replaceStrings>
       <replace>*</replace>
@@ -113,8 +113,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/es6Learning/README.md" />
-        <option value="$PROJECT_DIR$/Q1_浏览器是否会绕过web服务器向后台发送请求.md" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Q1_浏览器是否会绕过web服务器向后台发送请求.md" />
         <option value="$PROJECT_DIR$/Q2_Vue教程阅读笔记.md" />
       </list>
     </option>
@@ -134,8 +134,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="918" />
-    <option name="width" value="1009" />
+    <option name="x" value="1078" />
+    <option name="width" value="849" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
@@ -230,7 +230,7 @@
       <workItem from="1551412253285" duration="16000" />
       <workItem from="1551942696239" duration="21392000" />
       <workItem from="1552876142184" duration="19862000" />
-      <workItem from="1553478814969" duration="28054000" />
+      <workItem from="1553478814969" duration="46315000" />
     </task>
     <task id="LOCAL-00001" summary="修改说明文件">
       <created>1542188765460</created>
@@ -344,11 +344,25 @@
       <option name="project" value="LOCAL" />
       <updated>1553668402878</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="markdown列表语法">
+      <created>1553668577433</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1553668577433</updated>
+    </task>
+    <task id="LOCAL-00018" summary="markdown语法strong">
+      <created>1553668657623</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1553668657623</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147730000" />
+    <option name="totallyTimeSpent" value="165991000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -360,10 +374,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="918" y="0" width="1009" height="1047" extended-state="0" />
+    <frame x="1078" y="0" width="849" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989035" visible="true" weight="0.17281349" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989035" weight="0.17281349" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5010965" side_tool="true" weight="0.3297414" />
       <window_info id="DB Browser" order="3" sideWeight="0.4989035" weight="0.3297414" />
@@ -432,7 +446,8 @@
     <MESSAGE value="Markdown语法中*XXX*与**XXX**的区别" />
     <MESSAGE value="vue官方教程阅读笔记" />
     <MESSAGE value="markdown列表语法" />
-    <option name="LAST_COMMIT_MESSAGE" value="markdown列表语法" />
+    <MESSAGE value="markdown语法strong" />
+    <option name="LAST_COMMIT_MESSAGE" value="markdown语法strong" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/es6Learning/src/router/index.js">
@@ -453,13 +468,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="10297" column="24" lean-forward="true" selection-start-line="10297" selection-start-column="24" selection-end-line="10297" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Q1_浏览器是否会绕过web服务器向后台发送请求.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="716">
-          <caret line="55" column="4" lean-forward="true" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -494,12 +502,17 @@
     <entry file="file://$PROJECT_DIR$/es6Learning/src/assets/lifecycle.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/Q1_浏览器是否会绕过web服务器向后台发送请求.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Q2_Vue教程阅读笔记.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="192" column="1" selection-start-line="192" selection-start-column="1" selection-end-line="192" selection-end-column="1" />
-          <caret line="191" column="1" selection-start-line="191" selection-start-column="1" selection-end-line="191" selection-end-column="1" />
-          <caret line="190" column="1" selection-start-line="190" selection-start-column="1" selection-end-line="190" selection-end-column="1" />
+        <state relative-caret-position="586">
+          <caret line="430" lean-forward="true" selection-start-line="430" selection-end-line="430" />
         </state>
       </provider>
     </entry>

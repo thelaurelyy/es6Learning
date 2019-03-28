@@ -1,5 +1,7 @@
 
-## Vue教程阅读笔记
+# Vue教程阅读笔记
+
+## 一、基础
 
 ### Vue实例
 
@@ -22,6 +24,7 @@
 ### 模板语法
 
 1.插值
+
 2.指令
 
  - 动态参数，方括号中的内容会作为一个JavaScript表达式进行动态求值。
@@ -33,6 +36,7 @@
 
      <a v-on:[eventName]="doSomething"> ... </a>
      //当 eventName 的值为 "focus" 时，v-on:[eventName] 将等价于 v-on:focus
+
 3.缩写
 
 
@@ -144,7 +148,7 @@
  - v-if也是惰性的：如果在初始渲染时条件为假，则什么也不做直到条件第一次变为真时，才会开始渲染条件块。
  - v-show不论初始条件是什么，元素总是会被渲染，并且只是简单的基于css进行切换。
 
-一般来说，*v-if*具有更高的切换开销，而v-show有更高的初始渲染开销。因此：
+一般来说，v-if具有更高的切换开销，而v-show有更高的初始渲染开销。因此：
 
  - 如果需要频繁切换，使用v-show较好；
  - 如果在运行时条件很少改变，则使用v-if较好。
@@ -174,7 +178,7 @@
 
 因此建议在使用v-for时提供key属性，除非遍历输出的DOM内容非常简单，或者是刻意依赖默认行为以获取性能上的提升。
 
-3.数组的变异方法
+3.数组的方法
 
 变异方法（mutation method）会改变被这些方法调用的原始数组
 
@@ -198,15 +202,231 @@
           return item.message.match(/Foo/)
         })
 
+4.注意事项
+
+ - 由于 JavaScript 的限制，Vue 不能检测以下变动的数组：
+
+   a.当你利用索引直接设置一个项时，例如：vm.items[indexOfItem] = newValue
+   b.当你修改数组的长度时，例如：vm.items.length = newLength
+
+        var vm = new Vue({
+          data: {
+            items: ['a', 'b', 'c']
+          }
+        })
+        vm.items[1] = 'x' // 不是响应性的
+        vm.items.length = 2 // 不是响应性的
+
+为解决这样的问题，以下两种方式都可以实现数据更新，并且触发状态更新
+
+        // Vue.set
+        Vue.set(vm.items, indexOfItem, newValue)
+
+        // Array.prototype.splice
+        vm.items.splice(indexOfItem, 1, newValue)
+        vm.items.splice(newLength)
+
+        //你也可以使用 vm.$set 实例方法，该方法是全局方法 Vue.set 的一个别名：
+        vm.$set(vm.items, indexOfItem, newValue)
+
+ - 由于 JavaScript 的限制，Vue 不能检测对象属性的添加或删除：
+ 对于已经创建的实例，Vue 不能动态添加根级别的响应式属性。但是，可以使用 Vue.set(object, key, value) 方法向嵌套对象添加响应式属性。
+
+        var vm = new Vue({
+          data: {
+            userProfile: {
+              name: 'Anika'
+            }
+          }
+        })
+        Vue.set(vm.userProfile, 'age', 27)
+        vm.$set(vm.userProfile, 'age', 27)
+
+ 如果需要为已有对象添加多个新属性，比如使用 *Object.assign()* 或 *_.extend()*
+ 这种情况下应该用新增对象的属性创建一个新的对象，添加新的响应式属性不能这样：
+
+        Object.assign(vm.userProfile, {
+            age: 27,
+            favoriteColor: 'Vue Green'
+        })
+
+ 正确的做法是：
+
+        vm.userProfile = Object.assign({}, vm.userProfile, {
+            age: 27,
+            favoriteColor: 'Vue Green'
+        })
+
+5.显示过滤/排序结果
+
+有时，我们想要显示一个数组的过滤或排序副本，而不实际改变或重置原始数据。
+在这种情况下，可以创建返回过滤或排序数组的计算属性。
+
+类似于 v-if，你也可以利用带有 v-for 的 <template> 渲染多个元素
 
 
 
+### 事件处理
+
+1.事件修饰符
+
+        <!-- 阻止单击事件继续传播 -->
+        <a v-on:click.stop="doThis"></a>
+
+        <!-- 提交事件不再重载页面 -->
+        <form v-on:submit.prevent="onSubmit"></form>
+
+        <!-- 修饰符可以串联 -->
+        <a v-on:click.stop.prevent="doThat"></a>
+
+        <!-- 只有修饰符 -->
+        <form v-on:submit.prevent></form>
+
+        <!-- 添加事件监听器时使用事件捕获模式 -->
+        <!-- 即元素自身触发的事件先在此处理，然后才交由内部元素进行处理 -->
+        <div v-on:click.capture="doThis">...</div>
+
+        <!-- 只当在 event.target 是当前元素自身时触发处理函数 -->
+        <!-- 即事件不是从内部元素触发的 -->
+        <div v-on:click.self="doThat">...</div>
+
+        <!-- 点击事件将只会触发一次 -->
+        <a v-on:click.once="doThis"></a>
+
+        <!-- 滚动事件的默认行为 (即滚动行为) 将会立即触发 -->
+        <!-- 而不会等待 `onScroll` 完成  -->
+        <!-- 这其中包含 `event.preventDefault()` 的情况 -->
+        <!-- .passive 修饰符尤其能够提升移动端的性能 -->
+        <div v-on:scroll.passive="onScroll">...</div>
+
+> 使用修饰符时，顺序很重要；相应的代码会以同样的顺序产生。因此，用 v-on:click.prevent.self 会阻止所有的点击，
+而 v-on:click.self.prevent 只会阻止对元素自身的点击。
+
+> 不要把 .passive 和 .prevent 一起使用，因为 .prevent 将会被忽略，同时浏览器可能会向你展示一个警告。
+请记住，.passive 会告诉浏览器你不想阻止事件的默认行为。
+
+2.按键修饰符
+
+可以直接将 KeyboardEvent.key 暴露的任意有效按键名转换为 kebab-case 来作为修饰符。
+
+        <!-- 只有在 `key` 是 `Enter` 时调用 `vm.submit()` -->
+        <input v-on:keyup.enter="submit">
+
+        <!-- 处理函数只会在 $event.key 等于 PageDown 时被调用 -->
+        <input v-on:keyup.page-down="onPageDown">
+
+按键码的用法已经被废弃了，为支持旧浏览器，Vue提供了绝大多数常用的按键码的别名：
+
+ - .enter
+ - .tab
+ - .delete (捕获“删除”和“退格”键)
+ - .esc
+ - .space
+ - .up
+ - .down
+ - .left
+ - .right
+
+3.可以通过全局*config.keyCodes*对象自定义按键修饰符别名：
+
+        // 可以使用 `v-on:keyup.f1`
+        Vue.config.keyCodes.f1 = 112
+
+4.系统修饰键
+
+ - .ctrl
+
+        //只有在按住 ctrl 的情况下释放其它按键，才能触发 keyup.ctrl
+        //如果需要单单释放 ctrl，请为 ctrl 换用 keyCode（：keyup.17）
+
+ - .alt
+ - .shift
+ - .meta
+ - .exact
+
+        <!-- .exact 修饰符允许你控制由精确的系统修饰符组合触发的事件 -->
+        <!-- 即使 Alt 或 Shift 被一同按下时也会触发 -->
+        <button @click.ctrl="onClick">A</button>
+
+        <!-- 有且只有 Ctrl 被按下的时候才触发 -->
+        <button @click.ctrl.exact="onCtrlClick">A</button>
+
+        <!-- 没有任何系统修饰符被按下的时候才触发 -->
+        <button @click.exact="onClick">A</button>
+
+4.鼠标按钮修饰符
+
+ - .left
+ - .right
+ - .middle
+
+5.为什么在HTML中监听事件
+
+ a.扫一眼 HTML 模板便能轻松定位在 JavaScript 代码里对应的方法
+ b.因为你无须在 JavaScript 里手动绑定事件，你的 ViewModel 代码可以是非常纯粹的逻辑，和 DOM 完全解耦，更易于测试。
+ c.当一个 ViewModel 被销毁时，所有的事件处理器都会自动被删除。你无须担心如何清理它们。
 
 
 
+### 表单输入绑定
+
+1.单个复选框，绑定到布尔值；多个复选框，绑定到同一个数组。
+
+        <div id='example-3'>
+          <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+          <label for="jack">Jack</label>
+          <input type="checkbox" id="john" value="John" v-model="checkedNames">
+          <label for="john">John</label>
+          <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+          <label for="mike">Mike</label>
+          <br>
+          <span>Checked names: {{ checkedNames }}</span>
+        </div>
+
+2.选择框
+
+选择框单选时，绑定到字符串；多选时，v-model绑定到一个数组
+
+> 如果 v-model 表达式的初始值未能匹配任何选项，<select> 元素将被渲染为“未选中”状态。
+在 iOS 中，这会使用户无法选择第一个选项。因为这样的情况下，iOS 不会触发 change 事件。
+因此，更推荐像下面这样提供一个值为空的禁用选项。
+
+        <div id="example-5">
+          <select v-model="selected">
+            <option disabled value="">请选择</option>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+          </select>
+          <span>Selected: {{ selected }}</span>
+        </div>
+
+        new Vue({
+          el: '...',
+          data: {
+            selected: ''
+          }
+        })
+
+3.修饰符
+
+ - .lazy        // 在“change”时而非“input”时更新
+ - .number      // 自动将用户的输入值转为数值类型
+ - .trim        // 自动过滤用户输入的首尾空白字符
 
 
 
+### 组件基础
+
+1.一个组件的*data*选项必须是一个函数，因此每个实例可以维护一份被返回对象的独立的拷贝
+
+2.每个组件必须只有一个根元素
+
+3.在组件上使用v-model **注意**
+
+4.<font color="red">通过插槽分发内容 <slot> **注意区分默认插槽（匿名插槽slot）、具名插槽、作用域插槽（slot-scope）</font>
+
+5.<font color="red">动态组件和异步组件</font>
 
 
 

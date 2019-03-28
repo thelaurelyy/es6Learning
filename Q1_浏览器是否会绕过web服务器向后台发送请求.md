@@ -6,10 +6,9 @@ A：https://segmentfault.com/a/1190000015597029
 - 3、为什么vue开发模式下可以使用代理，而生产模式下使用nginx进行服务的代理转发？
 A：https://segmentfault.com/a/1190000015597029
 
-- 4、默认插槽（匿名插槽）、具名插槽、作用域插槽
-   slot                            slot-scope
-   
-- 5、JSON，JSONP？
+
+
+- 4、JSON，JSONP？
 
 
 
