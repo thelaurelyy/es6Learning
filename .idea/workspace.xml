@@ -56,13 +56,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="9983" />
+          <entry key="md" value="10023" />
           <entry key="txt" value="200" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="10183" />
+          <entry key="PLAIN_TEXT" value="10223" />
         </counts>
       </usages-collector>
     </session>
@@ -84,8 +84,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Q2_Vue教程阅读笔记.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="392" column="6" selection-start-line="392" selection-start-column="6" selection-end-line="392" selection-end-column="6" />
+            <state relative-caret-position="706">
+              <caret line="409" lean-forward="true" selection-start-line="409" selection-end-line="409" />
             </state>
           </provider>
         </entry>
@@ -99,8 +99,8 @@
       <find>webpack-dev-server</find>
       <find>eslint</find>
       <find>**</find>
-      <find>###</find>
       <find>插槽</find>
+      <find>2.选择框</find>
     </findStrings>
     <replaceStrings>
       <replace>*</replace>
@@ -134,8 +134,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1108" />
-    <option name="width" value="819" />
+    <option name="x" value="1181" />
+    <option name="width" value="746" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
@@ -200,7 +200,7 @@
       <workItem from="1551942696239" duration="21392000" />
       <workItem from="1552876142184" duration="19862000" />
       <workItem from="1553478814969" duration="54553000" />
-      <workItem from="1554085825353" duration="19384000" />
+      <workItem from="1554085825353" duration="20327000" />
     </task>
     <task id="LOCAL-00001" summary="修改说明文件">
       <created>1542188765460</created>
@@ -349,11 +349,25 @@
       <option name="project" value="LOCAL" />
       <updated>1554283832833</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Markdown：如何结束引用文字">
+      <created>1554284037031</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1554284037031</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Markdown：如何结束引用文字">
+      <created>1554284089984</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1554284089984</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193613000" />
+    <option name="totallyTimeSpent" value="194556000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -365,7 +379,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1108" y="0" width="819" height="1047" extended-state="0" />
+    <frame x="1181" y="0" width="746" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989035" weight="0.17281349" />
@@ -505,8 +519,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Q2_Vue教程阅读笔记.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="392" column="6" selection-start-line="392" selection-start-column="6" selection-end-line="392" selection-end-column="6" />
+        <state relative-caret-position="706">
+          <caret line="409" lean-forward="true" selection-start-line="409" selection-end-line="409" />
         </state>
       </provider>
     </entry>
