@@ -391,6 +391,8 @@
 在 iOS 中，这会使用户无法选择第一个选项。因为这样的情况下，iOS 不会触发 change 事件。
 因此，更推荐像下面这样提供一个值为空的禁用选项。
 
+
+    ```html
         <div id="example-5">
           <select v-model="selected">
             <option disabled value="">请选择</option>
@@ -407,6 +409,7 @@
             selected: ''
           }
         })
+    ```
 
 3.修饰符
 
