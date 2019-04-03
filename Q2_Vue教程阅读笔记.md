@@ -398,13 +398,7 @@
           </select>
           <span>Selected: {{ selected }}</span>
         </div>
-        //
-        new Vue({
-          el: '...',
-          data: {
-            selected: ''
-          }
-        })
+
 
 3.修饰符
 
