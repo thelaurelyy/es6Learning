@@ -56,13 +56,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="9975" />
-          <entry key="txt" value="166" />
+          <entry key="md" value="9983" />
+          <entry key="txt" value="200" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="10141" />
+          <entry key="PLAIN_TEXT" value="10183" />
         </counts>
       </usages-collector>
     </session>
@@ -84,8 +84,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Q2_Vue教程阅读笔记.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="617" lean-forward="true" selection-start-line="617" selection-end-line="617" />
+            <state relative-caret-position="233">
+              <caret line="392" column="6" selection-start-line="392" selection-start-column="6" selection-end-line="392" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -200,7 +200,7 @@
       <workItem from="1551942696239" duration="21392000" />
       <workItem from="1552876142184" duration="19862000" />
       <workItem from="1553478814969" duration="54553000" />
-      <workItem from="1554085825353" duration="19001000" />
+      <workItem from="1554085825353" duration="19384000" />
     </task>
     <task id="LOCAL-00001" summary="修改说明文件">
       <created>1542188765460</created>
@@ -335,11 +335,25 @@
       <option name="project" value="LOCAL" />
       <updated>1553762016608</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="自定义组件事件、具名插槽">
+      <created>1554283690866</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1554283690866</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Markdown：如何结束引用文字">
+      <created>1554283832833</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1554283832833</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193230000" />
+    <option name="totallyTimeSpent" value="193613000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -425,7 +439,9 @@
     <MESSAGE value="markdown列表语法" />
     <MESSAGE value="markdown语法strong" />
     <MESSAGE value="markdown语法字体颜色" />
-    <option name="LAST_COMMIT_MESSAGE" value="markdown语法字体颜色" />
+    <MESSAGE value="自定义组件事件、具名插槽" />
+    <MESSAGE value="Markdown：如何结束引用文字" />
+    <option name="LAST_COMMIT_MESSAGE" value="Markdown：如何结束引用文字" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/es6Learning/src/router/index.js">
@@ -489,8 +505,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Q2_Vue教程阅读笔记.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="617" lean-forward="true" selection-start-line="617" selection-end-line="617" />
+        <state relative-caret-position="233">
+          <caret line="392" column="6" selection-start-line="392" selection-start-column="6" selection-end-line="392" selection-end-column="6" />
         </state>
       </provider>
     </entry>
