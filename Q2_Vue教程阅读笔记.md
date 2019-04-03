@@ -428,6 +428,251 @@
 
 5.<font color="red">动态组件和异步组件</font>
 
+6.解析DOM模板时的注意事项：
+
+诸如 <ul>、<ol>、<table> 和 <select>这些HTML元素，对于哪些元素可以出现在其内部是有严格限制的。
+而有些元素，诸如 <li>、<tr> 和 <option>，只能出现在其它某些特定的元素内部。
+因此我们在使用有约束条件的元素时，注意容易产生的问题：
+
+        //这个自定义组件 <blog-post-row> 会被作为无效的内容提升到外部，并导致最终渲染结果出错
+        <table>
+          <blog-post-row></blog-post-row>
+        </table>
+
+        //解决方案
+        <table>
+          <tr is="blog-post-row"></tr>
+        </table>
+
+需要注意的是**如果我们从以下来源使用模板的话，这条限制是不存在的：**
+ - 字符串 (例如：template: '...')
+ - 单文件组件 (.vue)
+ - <script type="text/x-template">
+
+
+
+## 二、深入了解组件
+
+### 组件注册
+
+1.自定义组件名的命名规则：推荐字母全小写且必须包含一个连字符，这会帮助你避免和HTML元素相冲突。
+
+2.组件名的命名方法：
+
+ - kebab-case（短横线分隔命名）：引用时也必须使用短横线的方式；
+ - PascalCase（首字母大写命名）：引用时可以使用短横线和首字母大写两种命名法；注意，尽管如此，直接在 DOM (即非字符串的模板) 中使用时只有 kebab-case 是有效的。
+
+3.全局注册组件
+
+ 使用 Vue.component 创建的组件是全局注册的，在注册之后，可以用在任何新创建的 Vue 根实例（new Vue）的模板中。
+
+4.局部注册组件
+
+ 在根实例的 components 选项中定义/注册你想要使用的组件。注意**局部注册的组件在其子组件中不可用**
+
+5.全局注册的行为必须在根 Vue实例（通过new vue）创建之前发生。
+
+
+
+### Prop
+
+1.组件传值的时候，如果传递的值类型非字符串，那么即使参数是静态的，
+仍然要以v-bind指令来告诉 Vue 这是一个JavaScript表达式，而不是一个字符串。
+
+        <!-- 即便 `42` 是静态的，我们仍然需要 `v-bind` 来告诉 Vue -->
+        <!-- 这是一个 JavaScript 表达式而不是一个字符串。-->
+        <blog-post v-bind:likes="42"></blog-post>
+
+        <blog-post v-bind:is-published="false"></blog-post>
+
+        <blog-post v-bind:comment-ids="[234, 266, 273]"></blog-post>
+
+        <!-- 包含该 prop 没有值的情况在内，都意味着 `true`。-->
+        <blog-post is-published></blog-post>
+
+        <!-- **将一个对象的所有属性都作为 prop 传入** -->
+        post: {
+          id: 1,
+          title: 'My Journey with Vue'
+        }
+        <blog-post v-bind="post"></blog-post>
+
+2.所有的 prop 都使得其父子 prop 之间形成了一个单向下行绑定：父级 prop 的更新会向下流动到子组件中，但是反过来则不行。
+这样会防止从子组件意外改变父级组件的状态，从而导致你的应用的数据流向难以理解。
+
+这里有两种常见的试图改变一个 prop 的情形：
+ - 这个 prop 用来传递一个初始值；这个子组件接下来希望将其作为一个本地的 prop 数据来使用。在这种情况下，最好定义一个本地的 data 属性并将这个 prop 用作其初始值：
+
+        props: ['initialCounter'],
+        data: function () {
+          return {
+            counter: this.initialCounter
+          }
+        }
+
+ - 这个 prop 以一种原始的值传入且需要进行转换。在这种情况下，最好使用这个 prop 的值来定义一个计算属性：
+
+        props: ['size'],
+        computed: {
+        normalizedSize: function () {
+             return this.size.trim().toLowerCase()
+            }
+        }
+
+> 注意在 JavaScript 中对象和数组是通过引用传入的，所以对于一个数组或对象类型的 prop 来说，在子组件中改变这个对象或数组本身将会影响到父组件的状态。
+
+3.Prop验证
+
+当 prop 验证失败的时候，(开发环境构建版本的) Vue 将会产生一个控制台的警告。
+
+        Vue.component('my-component', {
+          props: {
+            // 基础的类型检查 (`null` 和 `undefined` 会通过任何类型验证)
+            propA: Number,
+            // 多个可能的类型
+            propB: [String, Number],
+            // 必填的字符串
+            propC: {
+              type: String,
+              required: true
+            },
+            // 带有默认值的数字
+            propD: {
+              type: Number,
+              default: 100
+            },
+            // 带有默认值的对象
+            propE: {
+              type: Object,
+              // 对象或数组默认值必须从一个工厂函数获取
+              default: function () {
+                return { message: 'hello' }
+              }
+            },
+            // 自定义验证函数
+            propF: {
+              validator: function (value) {
+                // 这个值必须匹配下列字符串中的一个
+                return ['success', 'warning', 'danger'].indexOf(value) !== -1
+              }
+            }
+          }
+        })
+
+> 注意那些 prop 会在一个组件实例创建之前进行验证，所以实例的属性 (如 data、computed 等) 在 default 或 validator 函数中是不可用的。
+
+type 可以是下列原生构造函数中的一个：
+
+ - String
+ - Number
+ - Boolean
+ - Array
+ - Object
+ - Date
+ - Function
+ - Symbol
+ - 自定义的构造函数
+
+4.对于绝大多数特性来说，从外部提供给组件的值会替换掉组件内部设置好的值。所以如果传入 type="text" 就会替换掉 type="date" 并把它破坏！
+庆幸的是，class 和 style 特性会稍微智能一些，即两边的值会被合并起来，从而得到最终的值：form-control date-picker-theme-dark。
+
+有了 inheritAttrs: false 和 $attrs，你就可以手动决定这些特性会被赋予哪个元素。
+
+注意 inheritAttrs: false 选项不会影响 style 和 class 的绑定。
+
+
+
+### 自定义事件（？？？）
+
+1.不同于组件和 prop，事件名不存在任何自动化的大小写转换。事件名需要完全匹配监听这个事件所用的名称。
+
+2.事件名推荐使用 kebab-case 命名方式
+
+3.注意带有.sync修饰符的v-bind**不能**和表达式一起使用，只能提供想要绑定的属性名。
+
+        //例如以下表达式是无效的
+        v-bind:title.sync=”doc.title + ‘!’”
+
+或者.sync直接和v-bind配合使用，同时设置多个prop传递一个对象属性（而不是复杂对象表达式）
+
+        <text-document v-bind.sync="doc"></text-document>
+
+
+
+### 插槽
+
+1.具名插槽和作用域插槽引入了新的统一的语法
+
+> 在 2.6.0 中，我们为具名插槽和作用域插槽引入了一个新的统一的语法 (即 v-slot 指令)。
+它取代了 slot 和 slot-scope 这两个目前已被废弃但未被移除且仍在文档中的特性。
+
+2.<slot> 插槽是写在组件内部的，用于传递组件起始标签和结束标签之前的内容。
+
+3.插槽内部可以访问组件内部作用域的实例属性，不能访问父级页面作用域的变量属性。
+
+> 父级模板里的所有内容都是在父级作用域中编译的；子模板里的所有内容都是在子作用域中编译的。
+
+4.<slot></slot>标签内部可以定义插槽的后备内容（默认内容）。
+
+5. 在向**具名插槽**提供内容的时候，我们可以在一个 <template> 元素上使用 v-slot 指令，并以 v-slot 的参数的形式提供其名称：
+
+        //base-layout组件内部代码
+        <div class="container">
+          <header>
+            <slot name="header"></slot>
+          </header>
+          <main>
+            <slot></slot>
+          </main>
+          <footer>
+            <slot name="footer"></slot>
+          </footer>
+        </div>
+
+        //父级页面代码
+        <base-layout>
+          <template v-slot:header>
+            <h1>Here might be a page title</h1>
+          </template>
+
+          <p>A paragraph for the main content.</p>
+          <p>And another one.</p>
+
+          <template v-slot:footer>
+            <p>Here's some contact info</p>
+          </template>
+        </base-layout>
+        //现在 <template> 元素中的所有内容都将会被传入相应的插槽
+
+任何没有被包裹在带有 v-slot 的 <template> 中的内容都会被视为默认插槽的内容。
+
+ - 一个不带 name 的 <slot> 出口会带有隐含的名字“default”
+ - 如果你希望更明确一些，仍然可以在一个 <template> 中包裹默认插槽的内容
+
+        <template v-slot:default>
+            <p>A paragraph for the main content.</p>
+            <p>And another one.</p>
+        </template>
+
+注意 v-slot 只能添加在一个 <template> 上 (只有一种例外情况)，这一点和已经废弃的 slot 特性不同。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
