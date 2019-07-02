@@ -398,7 +398,13 @@
           </select>
           <span>Selected: {{ selected }}</span>
         </div>
-
+        //
+        new Vue({
+          el: '...',
+          data: {
+            selected: ''
+          }
+        })
 
 3.修饰符
 
@@ -606,7 +612,7 @@ type 可以是下列原生构造函数中的一个：
 
 4.<slot></slot>标签内部可以定义插槽的后备内容（默认内容）。
 
-5. 在向**具名插槽**提供内容的时候，我们可以在一个 <template> 元素上使用 v-slot 指令，并以 v-slot 的参数的形式提供其名称：
+5.在向**具名插槽**提供内容的时候，我们可以在一个 <template> 元素上使用 v-slot 指令，并以 v-slot 的参数的形式提供其名称：
 
         //base-layout组件内部代码
         <div class="container">
@@ -648,8 +654,26 @@ type 可以是下列原生构造函数中的一个：
 
 注意 v-slot 只能添加在一个 <template> 上 (只有一种例外情况)，这一点和已经废弃的 slot 特性不同。
 
+6.有的时候我们需要在父级渲染的内容中访问子组件的数据，比如插槽后备内容动态取值。 <br />
+绑定在 <slot>元素上的特性被称为**插槽prop**
 
+    
+## 过渡 & 动画
 
+### 进入/离开&列表过渡
+
+1.过渡的类名
+
+ - v-enter
+ - v-enter-avtive
+ - v-enter-to
+ - v-leave
+ - v-leave-avtive
+ - v-leave-to
+ 
+ 
+
+![avatar](es6Learning/src/assets/transition.png)
 
 
 

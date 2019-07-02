@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f37c8e9a-0fb9-42dc-aa80-aa2a818d5fae" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Q2_Vue教程阅读笔记.md" beforeDir="false" afterPath="$PROJECT_DIR$/Q2_Vue教程阅读笔记.md" afterDir="false" />
     </list>
@@ -14,59 +15,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1944886961">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="13" />
-          <entry key="project.open.time.0" value="5" />
-          <entry key="project.open.time.11" value="2" />
-          <entry key="project.open.time.14" value="1" />
-          <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.24" value="1" />
-          <entry key="project.open.time.28" value="1" />
-          <entry key="project.open.time.29" value="1" />
-          <entry key="project.open.time.38" value="1" />
-          <entry key="project.open.time.40" value="1" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.54" value="1" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.open.time.8" value="3" />
-          <entry key="project.opened" value="21" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="html" value="1" />
-          <entry key="js" value="3" />
-          <entry key="json" value="4" />
-          <entry key="md" value="3" />
-          <entry key="png" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="HTML" value="1" />
-          <entry key="Image" value="1" />
-          <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="3" />
-          <entry key="PLAIN_TEXT" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="md" value="10049" />
-          <entry key="txt" value="200" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="PLAIN_TEXT" value="10249" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FavoritesManager">
     <favorites_list name="（9）es6" />
   </component>
@@ -74,18 +22,22 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17290">
-              <caret line="665" column="32" selection-start-line="665" selection-start-column="32" selection-end-line="665" selection-end-column="32" />
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Q2_Vue教程阅读笔记.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="407" lean-forward="true" selection-start-line="407" selection-end-line="407" />
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="494">
+                <caret line="673" column="1" lean-forward="true" selection-start-line="673" selection-start-column="1" selection-end-line="673" selection-end-column="1" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -101,6 +53,8 @@
       <find>**</find>
       <find>插槽</find>
       <find>2.选择框</find>
+      <find>后备内容</find>
+      <find>`</find>
     </findStrings>
     <replaceStrings>
       <replace>*</replace>
@@ -119,30 +73,18 @@
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/es6Learning/node_modules" />
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/es6Learning/package.json" />
-    </packageJsonPaths>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1103" />
-    <option name="width" value="824" />
-    <option name="height" value="1047" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -155,25 +97,19 @@
               <item name="（9）es6" type="462c0819:PsiDirectoryNode" />
               <item name="es6Learning" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="（9）es6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="（9）es6" type="462c0819:PsiDirectoryNode" />
-              <item name="es6Learning" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/git_repository/mpvue" />
+    <property name="last_opened_file_path" value="E:/git_repository/vue-element-admin" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -226,7 +162,20 @@
       <workItem from="1552876142184" duration="19862000" />
       <workItem from="1553478814969" duration="54553000" />
       <workItem from="1554085825353" duration="21765000" />
-      <workItem from="1554286617449" duration="235000" />
+      <workItem from="1554286617449" duration="394000" />
+      <workItem from="1554287555430" duration="119000" />
+      <workItem from="1554287811120" duration="2000" />
+      <workItem from="1554288338771" duration="1000" />
+      <workItem from="1554290589580" duration="776000" />
+      <workItem from="1554292904812" duration="4593000" />
+      <workItem from="1555058204147" duration="2922000" />
+      <workItem from="1558340163055" duration="1121000" />
+      <workItem from="1558342715345" duration="596000" />
+      <workItem from="1558343844690" duration="2244000" />
+      <workItem from="1560760606799" duration="3796000" />
+      <workItem from="1561002563057" duration="1819000" />
+      <workItem from="1561372574232" duration="6867000" />
+      <workItem from="1561947371599" duration="2474000" />
     </task>
     <task id="LOCAL-00001" summary="修改说明文件">
       <created>1542188765460</created>
@@ -410,11 +359,25 @@
       <option name="project" value="LOCAL" />
       <updated>1554285351509</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Markdown：如何结束引用文字">
+      <created>1554286862340</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1554286862340</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Markdown：如何结束引用文字">
+      <created>1554286950312</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1554286950312</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="196229000" />
+    <option name="totallyTimeSpent" value="223718000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -429,7 +392,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989035" visible="true" weight="0.13646056" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989035" visible="true" weight="0.12579957" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5010965" side_tool="true" weight="0.3297414" />
       <window_info id="DB Browser" order="3" sideWeight="0.4989035" weight="0.3297414" />
@@ -441,7 +404,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4994664" weight="0.32894737" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32894737" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286334" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49947312" weight="0.32899022" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053364" side_tool="true" weight="0.32790446" />
       <window_info anchor="bottom" id="DB Execution Console" order="11" />
@@ -483,9 +446,20 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="修改说明文件" />
@@ -558,16 +532,30 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider editor-type-id="text-editor">
         <state relative-caret-position="17290">
           <caret line="665" column="32" selection-start-line="665" selection-start-column="32" selection-end-line="665" selection-end-column="32" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Q2_Vue教程阅读笔记.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="407" lean-forward="true" selection-start-line="407" selection-end-line="407" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="656" lean-forward="true" selection-start-line="656" selection-end-line="656" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="494">
+            <caret line="673" column="1" lean-forward="true" selection-start-line="673" selection-start-column="1" selection-end-line="673" selection-end-column="1" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
