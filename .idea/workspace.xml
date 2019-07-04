@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f37c8e9a-0fb9-42dc-aa80-aa2a818d5fae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/es6Learning/src/components/ListTransition_01.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/es6Learning/src/components/ListTransition_02.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Q2_Vue教程阅读笔记.md" beforeDir="false" afterPath="$PROJECT_DIR$/Q2_Vue教程阅读笔记.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es6Learning/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/es6Learning/src/router/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,7 +23,9 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor />
+              <first_editor relative-caret-position="146">
+                <caret line="648" lean-forward="true" selection-start-line="648" selection-end-line="648" />
+              </first_editor>
               <second_editor />
             </state>
           </provider>
@@ -36,8 +35,8 @@
         <entry file="file://$PROJECT_DIR$/Q2_Vue教程阅读笔记.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="198">
-                <caret line="665" selection-start-line="665" selection-end-line="665" />
+              <first_editor relative-caret-position="354">
+                <caret line="752" column="6" selection-start-line="752" selection-start-column="6" selection-end-line="752" selection-end-column="6" />
               </first_editor>
               <second_editor />
             </state>
@@ -112,8 +111,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="954" />
-    <option name="width" value="973" />
+    <option name="x" value="948" />
+    <option name="width" value="979" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
@@ -228,7 +227,7 @@
       <workItem from="1560760606799" duration="3796000" />
       <workItem from="1561002563057" duration="1819000" />
       <workItem from="1561372574232" duration="6867000" />
-      <workItem from="1561947371599" duration="18521000" />
+      <workItem from="1561947371599" duration="19899000" />
     </task>
     <task id="LOCAL-00001" summary="修改说明文件">
       <created>1542188765460</created>
@@ -433,11 +432,25 @@
       <option name="project" value="LOCAL" />
       <updated>1562067619437</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="【Vue】过渡动画-DOM节点的操作">
+      <created>1562232105900</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1562232105900</updated>
+    </task>
+    <task id="LOCAL-00031" summary="【Vue】过渡动画-DOM节点的操作">
+      <created>1562232397648</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1562232397648</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="239765000" />
+    <option name="totallyTimeSpent" value="241143000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -449,7 +462,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="954" y="0" width="973" height="1047" extended-state="0" />
+    <frame x="948" y="0" width="979" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989035" weight="0.24863088" />
@@ -560,7 +573,8 @@
     <MESSAGE value="自定义组件事件、具名插槽" />
     <MESSAGE value="Markdown：如何结束引用文字" />
     <MESSAGE value="【Vue】过渡动画-transition" />
-    <option name="LAST_COMMIT_MESSAGE" value="【Vue】过渡动画-transition" />
+    <MESSAGE value="【Vue】过渡动画-DOM节点的操作" />
+    <option name="LAST_COMMIT_MESSAGE" value="【Vue】过渡动画-DOM节点的操作" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/es6Learning/package-lock.json">
@@ -601,19 +615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="17290">
-          <caret line="665" column="32" selection-start-line="665" selection-start-column="32" selection-end-line="665" selection-end-column="32" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/es6Learning/src/components/HelloWorld.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -635,16 +636,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/es6Learning/src/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/es6Learning/src/components/ListTransition_01.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -659,6 +650,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/es6Learning/src/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="17290">
+          <caret line="665" column="32" selection-start-line="665" selection-start-column="32" selection-end-line="665" selection-end-column="32" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="146">
+            <caret line="648" lean-forward="true" selection-start-line="648" selection-end-line="648" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Q2_Vue教程阅读笔记.md">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="505">
@@ -667,8 +683,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="198">
-            <caret line="665" selection-start-line="665" selection-end-line="665" />
+          <first_editor relative-caret-position="354">
+            <caret line="752" column="6" selection-start-line="752" selection-start-column="6" selection-end-line="752" selection-end-column="6" />
           </first_editor>
           <second_editor />
         </state>
