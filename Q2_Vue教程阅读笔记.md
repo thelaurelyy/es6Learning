@@ -662,6 +662,12 @@ type 可以是下列原生构造函数中的一个：
 
 ### 进入/离开&列表过渡
 
+> Vue 在插入、更新或者移除DOM时，提供多种不同方式的应用过渡效果。包括以下工具：
+ - 在 CSS 过渡和动画中自动应用 class
+ - 可以配合使用第三方 CSS 动画库，如 Animate.css
+ = 在过渡钩子函数中使用 JavaScript 直接操作 DOM
+ - 可以配合使用第三方 JavaScript 动画库，如 Velocity.js
+
 1.过渡的类名
 
  - v-enter
@@ -670,10 +676,63 @@ type 可以是下列原生构造函数中的一个：
  - v-leave
  - v-leave-avtive
  - v-leave-to
- 
- 
 
 ![avatar](es6Learning/src/assets/transition.png)
+ 
+  对于这些在过渡中切换的类名来说，如果你使用一个没有名字的 <transition>，则 v- 是这些类名的默认前缀。
+  如果你使用了 <transition name="my-transition">，那么 v-enter 会替换为 my-transition-enter。
+
+2.CSS过渡（transition） & CSS动画（animation）：区别（在动画中v-enter类名移除的时间节点不同）
+
+3.对于仅适用JavaScript过渡的时候，请注意：
+
+        当只用 JavaScript 过渡的时候，在 enter 和 leave 中必须使用 done 进行回调。否则，它们将被同步调用，过渡会立即完成。
+        
+        推荐对于仅使用 JavaScript 过渡的元素添加 v-bind:css="false"，Vue 会跳过 CSS 的检测。这也可以避免过渡过程中 CSS 的影响。
+
+4.类名和钩子函数都可以生成初始渲染过渡
+
+        // 自定义 CSS 类名：
+        <transition
+          appear
+          appear-class="custom-appear-class"
+          appear-to-class="custom-appear-to-class" (2.1.8+)
+          appear-active-class="custom-appear-active-class"
+        >
+          <!-- ... -->
+        </transition>
+        
+        // 自定义 JavaScript 钩子：
+        <transition
+          appear
+          v-on:before-appear="customBeforeAppearHook"
+          v-on:appear="customAppearHook"
+          v-on:after-appear="customAfterAppearHook"
+          v-on:appear-cancelled="customAppearCancelledHook"
+        >
+          <!-- ... -->
+        </transition>
+
+5.<transition> 的默认行为 - 进入和离开同时发生。
+
+  但同时生效的进入和离开的过渡不能满足所有要求，所以 Vue 提供了 过渡模式
+ 
+ - in-out：新元素先进行过渡，完成之后当前元素过渡离开。  
+ - out-in：当前元素先进行过渡，完成之后新元素过渡进入。
+
+6.多个元素的过渡，建议为每个元素设置key特性； <br />
+  多个组件的过渡，我们不需要使用key特性，只需要使用动态组件。
+  
+7.<transition-group> 列表过渡：
+
+ - 该标签会作为一个真实元素呈现，默认为<span>，也可以通过设置tag特性更换为其他元素
+ - 内部元素 **总是需要** 提供唯一的key属性值。
+ - 过渡模式不可用
+
+8.[列表过渡](https://cn.vuejs.org/v2/guide/transitions.html#%E5%88%97%E8%A1%A8%E8%BF%87%E6%B8%A1)  <br />
+此处涉及到lodash.js 和 velocity.js 需要多熟悉几遍
+
+9.动态过渡：创建动态过渡的最终方案是组件通过接受props来动态修改之前的过渡
 
 
 
