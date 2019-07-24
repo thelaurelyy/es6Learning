@@ -445,7 +445,7 @@
 需要注意的是**如果我们从以下来源使用模板的话，这条限制是不存在的：**
  - 字符串 (例如：template: '...')
  - 单文件组件 (.vue)
- - <script type="text/x-template">
+ - \<script type="text/x-template">
 
 
 
@@ -646,6 +646,7 @@ type 可以是下列原生构造函数中的一个：
 
  - 一个不带 name 的 <slot> 出口会带有隐含的名字“default”
  - 如果你希望更明确一些，仍然可以在一个 <template> 中包裹默认插槽的内容
+ 
 
         <template v-slot:default>
             <p>A paragraph for the main content.</p>
@@ -748,10 +749,148 @@ type 可以是下列原生构造函数中的一个：
  
   这些数据要么以数值的形式存储，要么可以转换为数值。
 根据这些数值，结合Vue的响应式和组件系统，使用第三方库来实现切换元素的过渡。
+
+
+
+## 可复用性 & 组合
+
+### 混入（重要！）
+
+1.混入的值类型为一个对象，对象中可包含任意组件选项。
+
+2.**选项合并** 当组件和混入对象含有同名选项时：
+
+    - 数据对象将会在内部进行递归合并，并在冲突时以组件数据优先。
+    - 同名钩子函数将合并为一个数组，因此都将被调用。另外，混入对象的钩子将在组件自身钩子 **之前** 调用。
+    - 值为对象的选项，例如methods、components和directives，将被合并为同一个对象。两个对象键名冲突时，取组件对象的键值对。
+
+3.**注意**：Vue.extend() 也使用同样的策略进行合并 ？？ 是指组件构造时的混入和组件选项进行合并吗？
+
+4.**全局混入**   <br />
+  因为Vue.mixin()会导致全局注册，使用时一定要格外小心，它将影响每一个之后创建的Vue实例。 <br />
+  Vue 可以自定义选项，获取方式为：  *this.$options.optionName* <br />
+  大多数情况下，只应当应用于自定义选项。推荐将其作为**插件**发布，以避免重复应用混入。
+  
+5.自定义选项合并策略：（1）自定义选项将使用默认策略，既简单的覆盖已有值；（2）也可以向Vue.config.optionMergeStrategies
+添加一个函数，自定义  自定义选项  的合并逻辑。
+
+
+### 自定义指令
+
+1.一个指令定义对象可以提供如下几个钩子函数（均为可选）：
+
+ - bind：只调用一次，指令第一次绑定到元素时调用。 在这里可以进行一次性的初始化设置。
+ - inserted：被绑定元素插入父节点时调用（仅保证父节点存在，但不一定已被插入文档中）。
+ - update：所在组件的VNode更新时调用，但是也可能是发生在其子VNode更新之前。
+ - componentUpdated：指令所在组件的VNode 及其子 VNode 全部更新后调用。
+ - unbind：只调用一次，指令与元素解绑时调用。
  
-1. aaa
-2. bbb
- 
+2.钩子函数的参数
+
+ - el：指令所绑定的元素，可以用来直接操作 DOM 。
+ - binding：一个对象，包含以下属性：
+    - name：指令名，不包括 v- 前缀。
+    - value：指令的绑定值，例如：v-my-directive="1 + 1" 中，绑定值为 2。
+    - oldValue：指令绑定的前一个值，仅在 update 和 componentUpdated 钩子中可用。无论值是否改变都可用。
+    - expression：字符串形式的指令表达式。例如 v-my-directive="1 + 1" 中，表达式为 "1 + 1"。
+    - arg：传给指令的参数，可选。例如 v-my-directive:foo 中，参数为 "foo"。
+    - modifiers：一个包含修饰符的对象。例如：v-my-directive.foo.bar 中，修饰符对象为 { foo: true, bar: true }。
+ - vnode：Vue 编译生成的虚拟节点。移步 VNode API 来了解更多详情。
+ - oldVnode：上一个虚拟节点，仅在 update 和 componentUpdated 钩子中可用。
+
+
+        <div id="hook-arguments-example" v-demo:foo.a.b="message"></div>
+        
+        Vue.directive('demo', {
+          bind: function (el, binding, vnode) {
+            var s = JSON.stringify // 这个语法很棒！
+            el.innerHTML =
+              'name: '       + s(binding.name) + '<br>' +
+              'value: '      + s(binding.value) + '<br>' +
+              'expression: ' + s(binding.expression) + '<br>' +
+              'argument: '   + s(binding.arg) + '<br>' +
+              'modifiers: '  + s(binding.modifiers) + '<br>' +
+              'vnode keys: ' + Object.keys(vnode).join(', ')
+          }
+        })
+        
+        new Vue({
+          el: '#hook-arguments-example',
+          data: {
+            message: 'hello!'
+          }
+        })
+  
+3.动态指令参数 指令的参数可以是动态的。
+例如，在 v-mydirective:[argument]="value" 中，argument 参数可以根据组件实例数据进行更新！
+
+        <div id="dynamicexample">
+          <h3>Scroll down inside this section ↓</h3>
+          <p v-pin:[direction]="200">I am pinned onto the page at 200px to the left.</p>
+        </div>
+        
+        Vue.directive('pin', {
+          bind: function (el, binding, vnode) {
+            el.style.position = 'fixed'
+            var s = (binding.arg == 'left' ? 'left' : 'top')
+            el.style[s] = binding.value + 'px'
+          }
+        })
+        
+        new Vue({
+          el: '#dynamicexample',
+          data: function () {
+            return {
+              direction: 'left'
+            }
+          }
+        })
+        
+4.函数简写
+
+  在很多时候，你可能想在 bind 和 update 时触发相同行为，而不关心其它的钩子。比如这样写:
+        
+        Vue.directive('color-swatch', function (el, binding) {
+        el.style.backgroundColor = binding.value
+        })
+        
+5.对象字面量
+
+  如果指令需要多个值，可以传入一个 JavaScript 对象字面量。记住，指令函数能够接受所有合法的 JavaScript 表达式。
+
+
+### 渲染函数 & JSX（重要！）
+
+1.Vue推荐在绝大多数情况下使用模板来创建HTML，然而在一些场景中需要JavaScript的完全编程的能力，
+这时可以使用**渲染函数**。 <br />
+  注意：渲染函数比模板更接近编译器。<br />
+  个人猜想：如果使用渲染函数实现界面，那么就可以忽略vue.js中的编译器功能，
+从而使用vue.js的运行时版本，例如：vue.runtime.min.js
+
+2.在 Vue 中，会用两种方式实现HTML：
+
+（1）模板
+
+        <h1>{{ blogTitle }}</h1>
+        
+（2）渲染函数
+
+        render: function (createElement) {
+          return createElement('h1', this.blogTitle)
+        }
+
+在这两种情况下，Vue都会自动保持页面的更新。
+
+3.虚拟DOM、虚拟节点（virtual node）-> VNode  <br />
+  createElement 更准确的说应该是 createNodeDescription ，即描述信息-
+  告诉Vue页面上需要渲染什么样的节点（包括其子节点的描述信息）。
+  
+4.
+
+
+
+
+
 
 
 
