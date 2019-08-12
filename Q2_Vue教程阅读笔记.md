@@ -754,7 +754,7 @@ type 可以是下列原生构造函数中的一个：
 
 ## 可复用性 & 组合
 
-### 混入（重要！）
+### 混入（`重要！！`）
 
 1.混入的值类型为一个对象，对象中可包含任意组件选项。
 
@@ -859,7 +859,7 @@ type 可以是下列原生构造函数中的一个：
   如果指令需要多个值，可以传入一个 JavaScript 对象字面量。记住，指令函数能够接受所有合法的 JavaScript 表达式。
 
 
-### 渲染函数 & JSX（重要！）
+### 渲染函数 & JSX（`重要！！`）
 
 1.Vue推荐在绝大多数情况下使用模板来创建HTML，然而在一些场景中需要JavaScript的完全编程的能力，
 这时可以使用**渲染函数**。 <br />
@@ -885,30 +885,291 @@ type 可以是下列原生构造函数中的一个：
   createElement 更准确的说应该是 createNodeDescription ，即描述信息-
   告诉Vue页面上需要渲染什么样的节点（包括其子节点的描述信息）。
   
-4.
+4.*createElement* 参数
+
+        // @returns {VNode}
+        createElement(
+          // {String | Object | Function}
+          // 一个 HTML 标签名、组件选项对象，或者
+          // resolve 了上述任何一种的一个 async 函数。必填项。
+          'div',
+        
+          // {Object}
+          // 一个与模板中属性对应的数据对象。可选。
+          {
+            // (详情见下一节)
+          },
+        
+          // {String | Array}
+          // 子级虚拟节点 (VNodes)，由 `createElement()` 构建而成，
+          // 也可以使用字符串来生成“文本虚拟节点”。可选。
+          [
+            '先写一些文字',
+            createElement('h1', '一则头条'),
+            createElement(MyComponent, {
+              props: {
+                someProp: 'foobar'
+              }
+            })
+          ]
+        )
+
+5.[深入数据对象](https://cn.vuejs.org/v2/guide/render-function.html#%E6%B7%B1%E5%85%A5%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1)
+
+有一点要注意：正如 v-bind:class 和 v-bind:style 在模板语法中会被特别对待一样，它们在 VNode 数据对象中也有对应的顶层字段。该对象也允许你绑定普通的 HTML 特性，也允许绑定如 innerHTML 这样的 DOM 属性 (这会覆盖 v-html 指令)。
+
+6.完整实例
+
+    // 原HTML
+    <h1>
+      <a name="hello-world" href="#hello-world">
+        Hello world!
+      </a>
+    </h1>
+
+    // 固定模板
+    <script type="text/x-template" id="anchored-heading-template">
+      <h1 v-if="level === 1">
+        <slot></slot>
+      </h1>
+      <h2 v-else-if="level === 2">
+        <slot></slot>
+      </h2>
+    </script>
+
+
+        // render完整示例
+        var getChildrenTextContent = function (children) {
+          return children.map(function (node) {
+            return node.children
+              ? getChildrenTextContent(node.children)
+              : node.text
+          }).join('')
+        }    
+        
+        Vue.component('anchored-heading', {
+          render: function (createElement) {
+            // 创建 kebab-case 风格的 ID
+            var headingId = getChildrenTextContent(this.$slots.default)
+              .toLowerCase()
+              .replace(/\W+/g, '-')
+              .replace(/(^-|-$)/g, '')
+        
+            return createElement(
+              'h' + this.level,
+              [
+                createElement('a', {
+                  attrs: {
+                    name: headingId,
+                    href: '#' + headingId
+                  }
+                }, this.$slots.default)
+              ]
+            )
+          },
+          props: {
+            level: {
+              type: Number,
+              required: true
+            }
+          }
+        })
+
+7.约束
+
+ - VNode必须唯一：组件树中的所有 VNode 必须是唯一的。
+ - 如果你真的需要重复很多次的元素/组件，你可以使用**工厂函数**来实现。
+   例如，下面这渲染函数用完全合法的方式渲染了 20 个相同的段落：
+   
+        render: function (createElement) {
+         return createElement('div',
+           Array.apply(null, { length: 20 }).map(function () {
+             return createElement('p', 'hi')
+           })
+         )
+        }
+        
+
+8.使用JavaScript代替模板功能
+
+ - 只要在原生的 JavaScript 中可以轻松完成的操作，Vue 的渲染函数就不会提供专有的替代方法。
+   比如在模板中使用的 v-if 和 v-for ， 这些都可以在渲染函数中用JavaScript的 if/else 和 map 遍历数组来重写。
+   
+ - 渲染函数中没有与 v-model 直接对应的方法，因此必须自己实现相应的逻辑。
+ 
+        props: ['value'],
+        render: function (createElement) {
+          var self = this
+          return createElement('input', {
+            domProps: {
+              value: self.value
+            },
+            on: {
+              input: function (event) {
+                self.$emit('input', event.target.value)
+              }
+            }
+          })
+        }
+        
+    这就是深入底层的代价，但与 v-model 相比，这可以让你更好地控制交互细节。
+
+ - 事件 & 按键修饰符
+ 
+   - 对于 .passive、.capture 和 .once 这些事件修饰符, Vue 提供了相应的前缀可以用于 on：
+     ![事件&按键修饰符](es6Learning/src/assets/事件&按键修饰符（render渲染函数）.png)
+     
+   - 对于所有其它的修饰符，私有前缀都不是必须的，因为你可以在事件处理函数中使用事件方法：
+     ![事件&按键修饰符](es6Learning/src/assets/事件&按键修饰符_02（render渲染函数）.png)
+     
+   - 这里是一个使用所有修饰符的例子：
+         
+            on: {
+             keyup: function (event) {
+               // 如果触发事件的元素不是事件绑定的元素
+               // 则返回
+               if (event.target !== event.currentTarget) return
+               // 如果按下去的不是 enter 键或者
+               // 没有同时按下 shift 键
+               // 则返回
+               if (!event.shiftKey || event.keyCode !== 13) return
+               // 阻止 事件冒泡
+               event.stopPropagation()
+               // 阻止该元素默认的 keyup 事件
+               event.preventDefault()
+               // ...
+             }
+            }
+ - 插槽
+   - 你可以通过 this.$slots 访问静态插槽的内容，每个插槽都是一个 VNode 数组
+   - 也可以通过 this.$scopedSlots 访问作用域插槽，每个作用域插槽都是一个返回若干 VNode 的函数
+   - 如果要用渲染函数向子组件中传递作用域插槽，可以利用 VNode 数据对象中的 scopedSlots 字段：
+   
+           render: function (createElement) {
+             return createElement('div', [
+               createElement('child', {
+                 // 在数据对象中传递`scopedSlots`
+                 // 格式为 { name: props => VNode | Array<VNode> }
+                 scopedSlots: {
+                    default: function (props) {
+                        return createElement('span', props.text)
+                    }
+                 }
+               }) 
+             ])
+           }
+
+9.JSX（`重要！！`）
+
+Babel 插件，用于在 Vue 中使用 JSX 语法，它可以让我们回到更接近于模板的语法上。
+
+> 将 h 作为 createElement 的别名是 Vue 生态系统中的一个通用惯例，实际上也是 JSX 所要求的。从 Vue 的 Babel 插件的 3.4.0 版本开始，我们会在以 ES2015 语法声明的含有 JSX 的任何方法和 getter 中 (不是函数或箭头函数中) 自动注入 const h = this.$createElement，这样你就可以去掉 (h) 参数了。对于更早版本的插件，如果 h 在当前作用域中不可用，应用会抛错。
+
+10.[函数式组件](https://cn.vuejs.org/v2/guide/render-function.html#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BB%84%E4%BB%B6)
+
+ - 简单的组件，没有管理状态，没有监听任何传递过来的状态，没有生命周期方法，只是单纯接收prop的函数。
+   这样的组件标记为 *functional*，称之为**函数式组件**，无状态（响应数据），无实例（没有this上下文）。
+
+> 当使用函数式组件时，该引用将会是 HTMLElement，因为他们是无状态的也是无实例的。
+ 
+ - 向子元素或子组件传递特性和事件：在普通组件中，没有被定义为 prop 的特性会自动添加到组件的根元素上，将已有的同名特性进行替换或与其进行智能合并。
+   然而函数式组件要求你显式定义该行为：
+ 
+        Vue.component('my-functional-button', {
+          functional: true,
+          render: function (createElement, context) {
+            // 完全透传任何特性、事件监听器、子节点等。
+            return createElement('button', context.data, context.children)
+          }
+        })
+
+ - 如果你使用基于模板的函数式组件，那么你还需要手动添加特性和监听器。
+
+11.模板编译：Vue 的模板实际上被编译成了渲染函数。
+
+
+### 插件
+
+插件通常用来为Vue添加全局功能。其功能范围没有严格的限制，一般有以下五种：
+
+1.添加全局方法或者属性。如: [vue-custom-element](https://github.com/karol-f/vue-custom-element)
+2.添加全局资源：指令/过滤器/过渡等。如 [vue-touch](https://github.com/vuejs/vue-touch)
+3.通过全局混入来添加一些组件选项。如 [vue-router](https://github.com/vuejs/vue-router)
+4.添加 Vue 实例方法，通过把它们添加到 Vue.prototype 上实现。
+5.一个库，提供自己的 API，同时提供上面提到的一个或多个功能。如 [vue-router](https://github.com/vuejs/vue-router)
+
+ - 使用插件
+ 
+ 全局方法*Vue.use()*它需要在你调用 new Vue() 启动应用之前完成：
+                
+    // 调用 `MyPlugin.install(Vue)`
+    Vue.use(MyPlugin)
+    
+    new Vue({
+      // ...组件选项
+    })
+
+ Vue.use 会自动阻止多次注册相同插件，届时即使多次调用也只会注册一次该插件。
+ 
+ Vue.js 官方提供的一些插件 (例如 vue-router) 在检测到 Vue 是可访问的全局变量时会自动调用 Vue.use()。然而在像 CommonJS 这样的模块环境中，你应该始终显式地调用 Vue.use()：
+    
+    // 用 Browserify 或 webpack 提供的 CommonJS 模块环境时
+    var Vue = require('vue')
+    var VueRouter = require('vue-router')
+    
+    // 不要忘了调用此方法
+    Vue.use(VueRouter)
+
+ - 开发插件
+ 
+ Vue.js 的插件应该暴露一个 install 方法。这个方法的第一个参数是 Vue 构造器，第二个参数是一个可选的选项对象：
+
+    MyPlugin.install = function (Vue, options) {
+      // 1. 添加全局方法或属性
+      Vue.myGlobalMethod = function () {
+        // 逻辑...
+      }
+    
+      // 2. 添加全局资源
+      Vue.directive('my-directive', {
+        bind (el, binding, vnode, oldVnode) {
+          // 逻辑...
+        }
+        ...
+      })
+    
+      // 3. 注入组件选项
+      Vue.mixin({
+        created: function () {
+          // 逻辑...
+        }
+        ...
+      })
+    
+      // 4. 添加实例方法
+      Vue.prototype.$myMethod = function (methodOptions) {
+        // 逻辑...
+      }
+    }
 
 
 
+### 过滤器
 
+1.Vue.js 允许你自定义过滤器，可被用于一些常见的文本格式化。
+过滤器可以用在两个地方：双花括号插值和 v-bind 表达式。过滤器应该被添加在 JavaScript 表达式的尾部，由“管道”符号指示：
 
+        <!-- 在双花括号中 -->
+        {{ message | capitalize }}
+        
+        <!-- 在 `v-bind` 中 -->
+        <div v-bind:id="rawId | formatId"></div>
 
+2.你可以在一个组件的选项中定义本地的过滤器，或者在创建 Vue 实例之前全局定义过滤器。**当全局过滤器和局部过滤器重名时，会采用局部过滤器。**
 
+3.过滤器函数总接收表达式的值 (之前的操作链的结果) 作为第一个参数，**可以串联**。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+4.滤器是 JavaScript 函数，因此可以接收参数，第一个参数为之前的操作链的结果。
 
 
 
