@@ -90,7 +90,8 @@
     </option>
   </component>
   <component name="SvnConfiguration">
-    <configuration>C:\Users\yuanyue.XGD\AppData\Roaming\Subversion</configuration>
+    <configuration>C:\Users\14247\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -145,7 +146,9 @@
       <workItem from="1580974496711" duration="2280000" />
       <workItem from="1581072704118" duration="944000" />
       <workItem from="1581319361803" duration="2253000" />
-      <workItem from="1581323633524" duration="12097000" />
+      <workItem from="1581323633524" duration="13985000" />
+      <workItem from="1581477646890" duration="7756000" />
+      <workItem from="1585396181939" duration="4380000" />
     </task>
     <task id="LOCAL-00001" summary="修改说明文件">
       <created>1542188765460</created>
@@ -392,7 +395,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581405223354</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="es6中数组和函数补漏">
+      <created>1581413830995</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1581413830995</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TodoView">
@@ -457,20 +467,37 @@
     <MESSAGE value="【Vue】过渡动画-状态过渡" />
     <MESSAGE value="【保险配置】由于最近需要给爸妈配置保险，所以了解一点保险知识" />
     <MESSAGE value="学习es6" />
-    <option name="LAST_COMMIT_MESSAGE" value="学习es6" />
+    <MESSAGE value="es6中数组和函数补漏" />
+    <option name="LAST_COMMIT_MESSAGE" value="es6中数组和函数补漏" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="352" y="9" key="CommitChangelistDialog2" timestamp="1581405222632">
+    <state x="352" y="9" key="CommitChangelistDialog2" timestamp="1581413830278">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="352" y="9" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1581405222632" />
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1581405247419">
+    <state x="352" y="9" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1581413830278" />
+    <state x="114" y="71" key="DiffContextDialog" timestamp="1581413825682">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1581405247419" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1581412785302">
+    <state x="114" y="71" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1581413825682" />
+    <state x="549" y="171" key="FileChooserDialogImpl" timestamp="1581930825305">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1581412785302" />
+    <state x="549" y="171" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1581930825305" />
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1581413843588">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1581413843588" />
+    <state x="563" y="150" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1581413812263">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="563" y="150" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1536.824@0.0.1536.824" timestamp="1581413812263" />
+    <state x="809" y="189" width="672" height="677" key="run.anything.popup" timestamp="1581416327446">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="809" y="189" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1581416327446" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1585396310729">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1585396310729" />
   </component>
 </project>
