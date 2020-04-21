@@ -283,7 +283,7 @@ console.log(setArr.has('技术胖'));
 
 
 
-console.log('用Proxy进行预处理=======================');
+// console.log('用Proxy进行预处理=======================');
 // let obj = {
 //     name: 'yy',
 //     add: function (val) {
@@ -318,23 +318,100 @@ console.log('用Proxy进行预处理=======================');
 
 
 // apply
-let target = function () {
-    return 'I am yy !~'
-}
-let handler = {
-    apply(target, ctx, args) {
-        console.log('target', target)
-        console.log('ctx', ctx)
-        console.log('args', args)
-        return Reflect.apply(...arguments)
+// let target = function () {
+//     return 'I am yy !~'
+// }
+// let handler = {
+//     apply(target, ctx, args) {
+//         console.log('target', target)
+//         console.log('ctx', ctx)
+//         console.log('args', args)
+//         return Reflect.apply(...arguments)
+//     }
+// }
+// var pro = new Proxy(target, handler)
+// console.log(pro())
+
+
+// console.log('用Promise解决回调地狱的问题=======================');
+// // step1: 洗菜做饭
+// // step2：坐下来吃饭
+// // step3：收拾桌子洗碗
+//
+// let  state = 1
+// function step1(resolve, reject) {
+//     console.log('1、开始-洗菜做饭')
+//     if(state === 1) {
+//         resolve('洗菜做饭-完成')
+//     } else {
+//         reject('洗菜做饭-失败')
+//     }
+// }
+// function step2(resolve, reject) {
+//     console.log('2、开始-坐下来吃饭')
+//     state = 0
+//     if(state === 1) {
+//         resolve('坐下来吃饭-完成')
+//     } else {
+//         reject('坐下来吃饭-失败')
+//     }
+// }
+// function step3(resolve, reject) {
+//     console.log('3、开始-收拾桌子洗碗')
+//     if(state === 1) {
+//         resolve('收拾桌子洗碗-完成')
+//     } else {
+//         reject('收拾桌子洗碗-失败')
+//     }
+// }
+// new Promise(step1)
+//     .then((val)=>{
+//         console.log(val)
+//         return new Promise(step2)
+//     }).then((val)=>{
+//         console.log(val)
+//         return new Promise(step3)
+//     }).then((val)=>{
+//         console.log(val)
+//     })
+
+
+
+console.log('class 类的使用=======================');
+
+class Coder {
+    name(val) {
+        console.log(val)
+        return val
+    }
+    skill(val) {
+        console.log(`${this.name(val)}：skill-web`)
+    }
+
+    constructor(a, b) {
+        this.a = a
+        this.b = b
+    }
+    add() {
+        return this.a + this.b
     }
 }
-var pro = new Proxy(target, handler)
-console.log(pro())
 
+// 类方法
+// let yy = new Coder()
+// yy.name('yy')
+// yy.skill('moon')
 
+// 类传递参数
+// let demo = new Coder(1, 2)
+// console.log(demo.add())
 
+// 继承类
+class htmler extends Coder {
 
+}
+let demo = new htmler(6, 8)
+console.log('继承add方法', demo.add())
 
 
 
